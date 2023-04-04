@@ -10,5 +10,8 @@ COPY requirements.txt .
 # Install the required dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Download the Spacy model
+RUN python -m spacy download en_core_web_md
+
 # Start the program
 CMD ["python", "watch_next.py"]
